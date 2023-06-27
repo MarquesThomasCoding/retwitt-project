@@ -1,0 +1,209 @@
+/* Barre de navigation du haut */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    z-index: 4;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    box-shadow: 0px 5px 30px 5px #000000;
+}
+
+.center-navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.name-retwitt {
+    margin: auto;
+    margin-left: 1%;
+}
+
+/* Icon de rechargement de la page */
+#reload {
+    transition: transform 2s;
+}
+
+#reload:hover {
+    cursor: pointer;
+}
+
+/* Liens */
+.links {
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+.link-active {
+    border-bottom: 3px solid #71cdff;
+    color: #71cdff;
+}
+
+.links:hover {
+    cursor: pointer;
+    color: #71cdff;
+    border-bottom: 3px solid #71cdff;
+}
+
+/* Formulaire de recherche */
+.search {
+    background: none;
+    backdrop-filter: blur(2px);
+    color: var(--main-text-color);
+    border: none;
+    outline: none;
+    width: 70px;
+}
+
+.search::placeholder {
+    color: var(--main-text-color);
+    font-family: var(--main-font-family);
+}
+
+.center-navbar button {
+    color: var(--main-text-color);
+    background: none;
+    border: none;
+}
+
+.fa-magnifying-glass {
+    padding: 20px;
+    padding-left: 0;
+}
+
+#profile {
+    margin: auto;
+    margin-right: 1%;
+}
+
+
+
+/* Barre de navigation à gauche */
+
+.side-bar {
+    margin: 0;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    backdrop-filter: blur(2px);
+    top: 50px;
+    height: 400px;
+    width: 200px;
+    font-size: 90%;
+    z-index: 3;
+}
+
+.side-bar div {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-bar a {
+    text-align: left;
+}
+
+.side-bar .links {
+    background: linear-gradient(to left, rgba(11, 47, 66,0) 50%, white 50%) right;
+    background-size: 200% 100%;
+}
+
+/* Animation des onglets lors du passage de la souris */
+@keyframes fadelink {
+    from {
+        background-position: right;
+    }
+    to {
+        background-position: left;
+    }
+}
+
+.side-bar .links:hover {
+    animation-name: fadelink;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+
+
+/* Barre de navigation "sur mobile" */
+
+.nav-bar-mobile {
+    position: sticky;
+    top:0;
+    display: none;
+    justify-content: space-between;
+    backdrop-filter: blur(2px);
+    z-index:4;
+}
+
+
+
+/* Barre de navigation à droite "sur mobile" */
+
+.side-bar-mobile {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    padding-top: 50px;
+    left:100vw;
+    width: 100vw;
+    height: 100vh;
+    transition: left .5s ease-in-out;
+    background-color: rgba(var(--main-color-bg), 0.75);
+    backdrop-filter: blur(15px);
+    z-index:3;
+}
+
+.side-bar-mobile a {
+    margin: 16px;
+    font-size: 1.2em;
+}
+
+.oppened {
+    left:0;
+}
+
+/* Icon permettant l'apparition de la barre de navigation à droite */
+i.menu {
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-size: 100%;
+}
+
+i.menu:hover {
+    cursor: pointer;
+}
+
+
+/* Responsive */
+@media (max-width: 228px) {
+    .name-retwitt {
+        display: none;
+    }
+}
+
+@media (max-width: 1010px) {
+    .navbar {
+        display: none;
+    }
+    .side-bar {
+        display: none;
+    }
+    .nav-bar-mobile {
+        display: flex;
+    }
+    .side-bar-mobile {
+        display: flex;
+    }
+}

@@ -1,0 +1,160 @@
+/* Style appliqué à tous les éléments */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* Variables CSS */
+    --main-color-bg: rgb(11, 47, 66);
+    --secondary-color-bg: #104460;
+    --main-card-color: #0e4562;
+    --main-text-color: white;
+    --main-font-family: 'Farro';
+    --secondary-font-family: 'Montserrat', 'sans-serif';
+    --main-btn-color-before: #04121a;
+    --main-btn-color-after: #0b8cd6;
+    --main-shadow: 5px 5px 0px 5px #082636;
+}
+
+
+/* Section error de la page redirection */
+.error {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.error a {
+    color: blue;
+}
+
+.error a:hover {
+    text-decoration: underline;
+}
+
+
+/* Classes avec effet flou, cachée et sans scroll */
+.blur {
+    filter: blur(3px);
+}
+
+.hidden {
+    display: none;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+
+/* Elément cachant les posts lorsque l'utilisateur n'est pas connecté */
+.blocked {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0px;
+    z-index: 2;
+    height: 100%;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocked h2 {
+    text-align: center;
+    font-family: var(--main-font-family);
+    font-size: 1.5em;
+    color: white;
+    border-radius: 10px;
+    background-color: var(--main-color-bg);
+    box-shadow: 5px 5px 0px 5px #082636;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Page en cours de développement */
+.comingsoon {
+    margin: auto;
+}
+
+
+/* Style de la barre de scroll */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+  
+::-webkit-scrollbar-track {
+    background: var(--main-color-bg); 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: #144f6f; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #0c3d60; 
+}
+
+
+/* Style général */
+body {
+    display: grid;
+    grid-template-columns: 250px 50vw auto;
+    font-family: var(--main-font-family);
+    color: white;
+    background: linear-gradient(var(--main-color-bg) 0%, var(--secondary-color-bg) 50%, var(--main-color-bg) 100%);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.button {
+    font-family: 'Montserrat', 'sans-serif';
+    margin-left: 2px;
+    width: 20vw;
+    height: 50px;
+    color: white;
+    background: linear-gradient(to left, var(--main-btn-color-before) 50%, var(--main-btn-color-after) 50%) right;
+    border: none;
+    border-radius: 10px;
+    background-size: 200% 100%;
+    transition: all .5s ease-in;
+}
+
+.button:hover {
+    background-position: left;
+}
+
+
+
+/* Responsive */
+@media (max-width: 1010px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .blocked {
+        left:0;
+        top:0;
+        width: 100vw;
+    }
+}

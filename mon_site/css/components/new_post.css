@@ -1,0 +1,165 @@
+/* Bouton nouveau post */
+
+div.new-post-modal {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    right:1vw;
+    top: 88vh;
+    border: 3px solid #1A78AC;
+    border-radius: 100%;
+    z-index: 3;
+}
+
+div.new-post-modal:hover {
+    animation: scale-up 0.5s both linear;
+}
+
+i.new-post-modal {
+    color: #1A78AC;
+    font-size: 250%;
+    padding: 1vw;
+    border-radius: 100%;
+}
+
+a.new-post-modal:hover {
+    cursor: pointer;
+    animation: scale-up 1s linear both;
+}
+
+/* Animation lors du passage de la souris sur le bouton */
+@keyframes scale-up {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* Pop up du nouveau post */
+
+.new-post-modal-content {
+    position: fixed;
+    bottom: 20vh;
+    right: 25%;
+    border-radius: 5px;
+    background-color: var(--main-card-color);
+    width: 50vw;
+    min-height: 500px;
+    display: none;
+    flex-direction: column;
+    color: black;
+    z-index: 3;
+    box-shadow: 3px 3px 10px 6px #04121a;
+}
+
+.new-post-modal-content h3 {
+    color: var(--main-text-color);
+    background-color: var(--main-color-bg);
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+h4.pseudo {
+    margin: auto;
+    margin-left: 10px;
+}
+
+form.new-post-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    margin-top: 10px;
+    padding: 2px;
+    width: 100px;
+    height: 30px;
+    background-color:var(--main-color-bg);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 5px;
+}
+
+option {
+    border-radius: 5px;
+}
+
+textarea {
+    color: var(--main-text-color);
+    font-size: 20px;
+    background: var(--main-color-bg);
+    border: none;
+    border-bottom: 5px solid white;
+    margin: 2vw;
+    height: 200px;
+    width: 90%;
+    resize: none;
+    outline: none;
+}
+
+
+.medias {
+    display: flex;
+}
+
+/* Style de l'input file */
+
+.media-input {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.media-input + label {
+    text-align: center;
+    height: 20%;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: var(--main-color-bg);
+    display: inline-block;
+    border: 2px solid var(--main-color-bg);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.media-input:focus + label,
+.media-input + label:hover {
+    background-color: var(--main-card-color);
+}
+
+#preview * {
+    display: flex;
+    width: 50px;
+    height: 80%;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+/* Boutons de soumission, ou d'inscription et de connexion */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/* Responsive */
+@media (max-width: 1010px) {
+    .new-post-modal-content {
+        width: 75%;
+        right: 12.5%;
+    }
+}

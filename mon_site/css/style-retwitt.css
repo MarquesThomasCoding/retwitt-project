@@ -1,0 +1,8 @@
+/* Importation des différents composants css */
+
+@import url("components/navbars.css");
+@import url("components/posts.css");
+@import url("components/profile.css");
+@import url("components/new_post.css");
+@import url("components/form_log_sign.css");
+@import url("components/global.css");

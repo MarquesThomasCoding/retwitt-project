@@ -1,0 +1,97 @@
+/* Body des pages Sign In et Log In */
+.form-log-sign-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+
+
+/* Formulaire d'inscription et de connexion */
+.form-log-sign {
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-log-sign form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-log-sign input[type="text"], .form-log-sign input[type="password"], .form-log-sign input[type="email"] {
+    color: var(--main-text-color);
+    background-color: #061923;
+    border: none;
+    box-shadow: 2px 2px 0px 2px #04121a;
+    border-radius: 5px;
+    height: 50px;
+    width: 200px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+
+/* Style de l'input file du formulaire d'inscription */
+
+.form-log-sign input[type="file"] {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+
+.form-log-sign #preview-avatar {
+    background-color: #061923;
+    border: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+#preview-avatar img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+input::placeholder {
+    font-family: var(--secondary-font-family);
+    color: var(--main-text-color);
+    opacity: 0.5;
+}
+
+.form-log-sign button {
+    font-family: var(--secondary-font-family);
+    margin-left: 2px;
+    width: 200px;
+    height: 50px;
+    color: var(--main-text-color);
+    background: linear-gradient(to left, #04121a 50%, #0b8cd6 50%) right;
+    border: none;
+    border-radius: 10px;
+    background-size: 200% 100%;
+    transition: all .5s ease-in;
+}
+
+.form-log-sign button:hover {
+    background-position: left;
+}
+
+.form-log-sign a {
+    margin: 10px;
+    color: #0b8cd6;
+    text-decoration: none;
+}
+
+.form-log-sign a:hover {
+    text-decoration: underline;
+}

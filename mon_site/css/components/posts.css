@@ -1,0 +1,248 @@
+/* Section des posts */
+.posts {
+    position: relative;
+    top: 10vh;
+    padding-bottom: 20px;
+    width: 50vw;
+}
+
+.filters {
+    display: flex;
+    justify-content: left;
+}
+
+.filters div.filter {
+    margin-right: 1vw;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+
+.tags-filter {
+    position: relative;
+}
+
+.tags-filter:hover {
+    cursor: pointer;
+}
+
+.tags-content {
+    text-align: center;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    display: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 50vw;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+.tags-content div {
+    margin-left: 0.2vw;
+    padding: 0.5vw;
+    padding-top: 1vh;
+    font-size: small;
+}
+
+.media {
+    width: 75%;
+    border-radius: 5px;
+}
+
+
+/* Liste des tags */
+.voyage {
+    background-color: rgb(16, 134, 164);
+    border-radius: 10px;
+}
+.jeu-video {
+    background-color: rgb(16, 101, 164);
+    border-radius: 10px;
+}
+.innovation {
+    background-color: rgb(16, 56, 164);
+    border-radius: 10px;
+}
+.musique {
+    background-color: rgb(87, 16, 164);
+    border-radius: 10px;
+}
+.television {
+    background-color: rgb(164, 16, 162);
+    border-radius: 10px;
+}
+.animaux {
+    background-color: rgb(164, 16, 56);
+    border-radius: 10px;
+}
+.peinture {
+    background-color: rgb(164, 58, 16);
+    border-radius: 10px;
+}
+.lecture {
+    background-color: rgb(164, 125, 16);
+    border-radius: 10px;
+}
+.sport {
+    background-color: rgb(132, 164, 16);
+    border-radius: 10px;
+}
+.loisirs {
+    background-color: rgb(60, 164, 16);
+    border-radius: 10px;
+}
+
+
+
+.tag-choice {
+    opacity: 0.5;
+}
+
+.tag-choice:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.tag-active {
+    opacity: 1;
+}
+
+/* Post */
+.post {
+    margin-top: 20px;
+    background-color: var(--main-card-color);
+    box-shadow: var(--main-shadow);
+    color: var(--main-text-color);
+    border-radius: 5px;
+    text-align: center;
+    width: 50vw;
+    min-height: 210px;
+}
+
+.up-post {
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.usernames {
+    margin-left: 10px;
+}
+
+h4.userpseudo {
+    text-align: center;
+    margin: auto 10px;
+}
+
+h5.username {
+    margin: 10px;
+    opacity: .7;
+    font-size: 10px;
+}
+
+img.twitt_user_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+hr {
+    color: #1A78AC;
+}
+
+.date-publication {
+    margin: auto;
+    font-size: 12px;
+}
+
+.tag {
+    margin: auto;
+    padding: 0.2vw;
+    height: 1%;
+    display: inline;
+    border-radius: 10px;
+}
+
+
+.post-content {
+    min-height: 50px;
+    text-align: left;
+    margin: 16px;
+    font-family: var(--secondary-font-family)
+}
+
+
+.post-option {
+    display: flex;
+    height: 25px;
+    margin: 5px;
+    justify-content: end;
+}
+
+i.options {
+    font-size: 20px;
+    color: var(--main-text-color);
+}
+
+.del-icon {
+    height: 20px;
+    background: none;
+    border: none;
+    width: 20px;
+}
+
+.saved-icon {
+    height: 20px;
+    background: none;
+    border: none;
+    width: 20px;
+}
+
+
+/* Confirmation de suppression au centre de la page*/
+.confirm-action {
+    display: none;
+    position: fixed;
+    top: 90%;
+    left: 10px;
+    background-color: var(--main-card-color);
+    box-shadow: var(--main-shadow);
+    color: var(--main-text-color);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    z-index: 3;
+    min-width: 50px;
+}
+
+.confirm-action-content {
+    min-width: 50px;
+}
+
+.action-post-modal-bar-progress {
+    width: 100%;
+    height: 5px;
+    background-color: var(--main-text-color);
+    border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1010px) {
+    .posts {
+        top: 0;
+    }
+    .posts, .post {
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        width: 80vw;
+    }
+    .tags-content {
+        width: 80vw;
+    }
+}
