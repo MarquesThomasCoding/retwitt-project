@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 27 juin 2023 à 16:45
+-- Généré le : jeu. 29 juin 2023 à 12:48
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -39,7 +39,8 @@ CREATE TABLE `saved` (
 
 INSERT INTO `saved` (`id`, `user_id`, `twitt_id`) VALUES
 (10, 17, 111),
-(11, 18, 114);
+(11, 18, 114),
+(14, 17, 114);
 
 -- --------------------------------------------------------
 
@@ -120,13 +121,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `saved`
 --
 ALTER TABLE `saved`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `twitts`
 --
 ALTER TABLE `twitts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT pour la table `user`
