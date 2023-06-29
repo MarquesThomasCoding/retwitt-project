@@ -23,6 +23,8 @@
     align-items: center;
 }
 
+/* Style des input de type text, password et email */
+
 .form-log-sign input[type="text"], .form-log-sign input[type="password"], .form-log-sign input[type="email"] {
     color: var(--main-text-color);
     background-color: #061923;
@@ -48,6 +50,8 @@
     cursor: pointer;
 }
 
+/* Preview de l'avatar */
+
 .form-log-sign #preview-avatar {
     background-color: #061923;
     border: none;
@@ -63,11 +67,15 @@
     width: 100%;
 }
 
+/*  */
+
 input::placeholder {
     font-family: var(--secondary-font-family);
     color: var(--main-text-color);
     opacity: 0.5;
 }
+
+/* Bouton de soumission */
 
 .form-log-sign button {
     font-family: var(--secondary-font-family);
@@ -85,6 +93,8 @@ input::placeholder {
 .form-log-sign button:hover {
     background-position: left;
 }
+
+/* Liens des pages Sign In et Log In */
 
 .form-log-sign a {
     margin: 10px;

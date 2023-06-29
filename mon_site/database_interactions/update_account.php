@@ -10,7 +10,7 @@ require 'database.php';
 $password = $_POST["mdp"];
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-//Requête pour modifier le compte de l'utilisateur connecté
+// Requête pour modifier le compte de l'utilisateur connecté
 $update_account = $database->prepare('UPDATE user SET pseudo=:pseudo, nom=:nom, mail=:mail, mdp=:mdp WHERE user_id = :user_id');
 $update_account->execute(
     [

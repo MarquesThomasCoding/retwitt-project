@@ -16,7 +16,7 @@ $twitt->execute(
 
 $media = $twitt->fetchAll(PDO::FETCH_ASSOC);
 
-// On supprime le media du post de l'ordinateur
+// On supprime le media du post du dossier medias
 $filename = "../imgs/medias/".$_SESSION['user_id'].$media[0]['media'];
 unlink($filename);
 

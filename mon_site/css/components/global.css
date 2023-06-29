@@ -86,46 +86,30 @@
 }
 
 
-/* Style de la barre de scroll */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-  
-::-webkit-scrollbar-track {
-    background: var(--main-color-bg); 
-}
-   
-::-webkit-scrollbar-thumb {
-    background: #144f6f; 
-}
-  
-::-webkit-scrollbar-thumb:hover {
-    background: #0c3d60; 
-}
-
-
 /* Style général */
+/* Body */
 body {
     display: grid;
     grid-template-columns: 250px 50vw auto;
     font-family: var(--main-font-family);
     color: white;
     background: linear-gradient(var(--main-color-bg) 0%, var(--secondary-color-bg) 50%, var(--main-color-bg) 100%);
+    scrollbar-width: thin;
+    scrollbar-color: #0f3a52 var(--main-color-bg);
 }
 
-button:hover {
+/* Survol de bouton et de liens */
+button:hover, a:hover {
     cursor: pointer;
 }
 
+/* On enlève le style par défaut des liens */
 a {
     text-decoration: none;
 }
 
-a:hover {
-    cursor: pointer;
-}
 
+/* Class bouton */
 .button {
     font-family: 'Montserrat', 'sans-serif';
     margin-left: 2px;

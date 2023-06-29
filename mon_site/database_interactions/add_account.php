@@ -61,7 +61,7 @@ if($check == false) {
     $_SESSION['pseudo'] = $account[0]['pseudo'];
     $_SESSION['email'] = $account[0]['mail'];
     $_SESSION['img'] = "imgs/avatars/".$_SESSION['user_id']."_".$account[0]['img'];
-    // on ajoute le fichier dans le dossier imgs/avatars avec comme nom : [Identifiant de l'utilisateur]+[Nom du fichier]
+    // on ajoute le fichier dans le dossier imgs/avatars avec comme nom : [Identifiant de l'utilisateur]+"_"+[Nom du fichier]
     move_uploaded_file($_FILES["avatar"]["tmp_name"], "../".$_SESSION['img']);
 
     // Redirection vers la page index

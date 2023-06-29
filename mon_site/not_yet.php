@@ -20,6 +20,6 @@ if(!isset($_SESSION["user_id"])){
 <body>
     <?php require "templates/navbars.php" ?>
     <h1 class="comingsoon">Coming soon</h1>
-    <script src="script-retwitt.js"></script>
+    <script src="js/script-retwitt.js"></script>
 </body>
 </html>

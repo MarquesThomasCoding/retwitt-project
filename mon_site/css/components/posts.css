@@ -6,6 +6,7 @@
     width: 50vw;
 }
 
+/* Filtre par tag */
 .filters {
     display: flex;
     justify-content: left;
@@ -47,10 +48,6 @@
     font-size: small;
 }
 
-.media {
-    width: 75%;
-    border-radius: 5px;
-}
 
 
 /* Liste des tags */
@@ -95,7 +92,7 @@
     border-radius: 10px;
 }
 
-
+/*  */
 
 .tag-choice {
     opacity: 0.5;
@@ -151,9 +148,6 @@ img.twitt_user_img {
     border-radius: 50%;
 }
 
-hr {
-    color: #1A78AC;
-}
 
 .date-publication {
     margin: auto;
@@ -177,6 +171,12 @@ hr {
 }
 
 
+/* Style des médias */
+.media {
+    width: 75%;
+    border-radius: 5px;
+}
+
 .post-option {
     display: flex;
     height: 25px;
@@ -189,22 +189,57 @@ i.options {
     color: var(--main-text-color);
 }
 
-.del-icon {
+.del-icon, .saved-icon {
     height: 20px;
     background: none;
     border: none;
     width: 20px;
 }
 
-.saved-icon {
-    height: 20px;
-    background: none;
-    border: none;
-    width: 20px;
+/* Demande de confirmation de suppression de post */
+.confirm-delete {
+    display: none;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 50%;
+    left: 35vw;
+    margin: auto;
+    background-color: var(--main-card-color);
+    box-shadow: var(--main-shadow);
+    color: var(--main-text-color);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    z-index: 3;
+    width: fit-content;
 }
 
+.confirm-delete-content {
+    min-width: 50px;
+    display: flex;
+    flex-direction: column;
+}
 
-/* Confirmation de suppression au centre de la page*/
+.confirm-delete-content-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.confirm-delete-content-buttons button {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--main-text-color);
+    color: var(--main-card-color);
+}
+
+.confirm-delete-content-buttons button:hover {
+    cursor: pointer;
+}
+
+/* Confirmation d'action en bas à gauche de la page*/
 .confirm-action {
     display: none;
     position: fixed;
@@ -224,6 +259,7 @@ i.options {
     min-width: 50px;
 }
 
+/* Barre indiquant le temps avant la disparition du message */
 .action-post-modal-bar-progress {
     width: 100%;
     height: 5px;
@@ -233,6 +269,10 @@ i.options {
 
 /* Responsive */
 @media (max-width: 1010px) {
+    .confirm-delete {
+        margin: auto;
+        width: 30vw;
+    }
     .posts {
         top: 0;
     }

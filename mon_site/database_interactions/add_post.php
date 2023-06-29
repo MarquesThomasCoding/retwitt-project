@@ -14,7 +14,7 @@ $filesize = filesize($name);
 
 // Si la taille du fichier est bien inférieure ou égale à 2Mo
 if($filesize <= 20000000) {
-    // on ajoute le fichier dans le dossier imgs/medias avec comme nom : [Identifiant de l'utilisateur]+[Nom du fichier]
+    // on ajoute le fichier dans le dossier imgs/medias avec comme nom : [Identifiant de l'utilisateur]+"_"+[Nom du fichier]
     move_uploaded_file($_FILES["media"]["tmp_name"], "../imgs/medias/".$_SESSION['user_id']."_".$filename);
 
     // Requête pour insérer le post dans la base de données

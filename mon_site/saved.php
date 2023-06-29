@@ -105,13 +105,16 @@ $saved = $saved->fetchAll(PDO::FETCH_ASSOC);
                 <?php } ?>
                 <hr>
 
-                <!-- Si le post appartient à l'utilisateur connecté, on donne la possibilité de supprimer le post -->
                 
+                <!-- Options du post -->
                 <div class="post-option">
+                    <!-- Icone d'enregistrement du post -->
                     <form action="database_interactions/save.php" class="saved-icon" method="post">
                         <input name="id" type="hidden" value="<?= $twitt['id'] ?>">
                         <button class="saved-icon"><i class="options fa-solid fa-bookmark"></i></button>
                     </form>
+
+                <!-- Si le post appartient à l'utilisateur connecté, on donne la possibilité de supprimer le post -->
                 <?php if(isset($_SESSION['user_id']) && $twitt['userid'] == $_SESSION['user_id']) { ?>
                     <form class="del-icon" action="database_interactions/del_post.php" method="post">
                         <input name="id" type="hidden" value="<?= $twitt['id'] ?>">
@@ -122,6 +125,7 @@ $saved = $saved->fetchAll(PDO::FETCH_ASSOC);
             </div>
         <?php } ?>
     </div>
-    <script src="script-retwitt.js"></script>
+    <!-- On recupère le script js -->
+    <script src="js/script-retwitt.js"></script>
 </body>
 </html>

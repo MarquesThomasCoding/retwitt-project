@@ -34,6 +34,20 @@ $searchTwitts = $requete->fetchAll(PDO::FETCH_ASSOC);
     <!-- Récupération du template "navbars.php" -->
     <?php require 'templates/navbars.php' ?>
 
+    <!-- Pop-up pour confirmer la suppression d'un post -->
+    <div class="confirm-delete">
+        <div class="confirm-delete-content">
+            <h2>Delete post?</h2>
+            <div>This action cannot be undo</div>
+            <form class="confirm-delete-content-buttons">
+                <button class="confirm-delete-content-buttons-close">Close</button>
+                <button class="confirm-delete-content-buttons" type="submit" placeholder="Confirm">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Fenêtre de confirmation d'action (suppression ou enregistrement d'un post) -->
     <div class="confirm-action">
         <div class="confirm-action-content">
             <div class="action-post-modal-content"></div>
@@ -97,13 +111,15 @@ $searchTwitts = $requete->fetchAll(PDO::FETCH_ASSOC);
                 <?php } ?>
                 <hr>
 
-                <!-- Si le post appartient à l'utilisateur connecté, on donne la possibilité de supprimer le post -->
-                
+                <!-- Options du post -->
                 <div class="post-option">
+                    <!-- Icone d'enregistrement du post -->
                     <form class="saved-icon" action="database_interactions/save.php" method="post">
                         <input name="id" type="hidden" value="<?= $twitt['id'] ?>">
                         <button class="saved-icon"><i class="options fa-solid fa-bookmark"></i></button>
                     </form>
+
+                    <!-- Si le post appartient à l'utilisateur connecté, on donne la possibilité de supprimer le post -->
                     <?php if(isset($_SESSION['user_id']) && $twitt['userid'] == $_SESSION['user_id']) { ?>
                     <form class="del-icon" action="database_interactions/del_post.php" method="post">
                         <input name="id" type="hidden" value="<?= $twitt['id'] ?>">
@@ -115,6 +131,6 @@ $searchTwitts = $requete->fetchAll(PDO::FETCH_ASSOC);
         <?php } ?>
     </div>
     <!-- On récupère le script JS -->
-    <script src="script-retwitt.js"></script>
+    <script src="js/script-retwitt.js"></script>
 </body>
 </html>

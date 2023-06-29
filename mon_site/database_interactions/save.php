@@ -32,7 +32,7 @@ if(count($check_post) > 0){
     exit();
 }
 
-// Sinon, on l'ajoute du twitt enregistré à la bdd
+// Sinon, on l'ajoute à la bdd
 
 else {
     $add_post = $database->prepare('INSERT INTO saved (user_id, twitt_id) VALUES (:user_id, :tweet_id)');

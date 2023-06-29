@@ -30,6 +30,6 @@
         </form>
 
     </div>
-    <script src="signIn.js"></script>
+    <script src="js/signIn.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ $add_post->execute(
         "content"=>"Bonjour ! Ceci est un post pré-écrit ! Vous pouvez le modifier dans le fichier postPreTwitt.php ! :)",
         "media"=>"",
         // L'identifiant du compte est fixé à 7 pour le moment, il faudra le changer par la suite
-        "userid"=>"7"
+        "userid"=>"17"
     ]
 );
 

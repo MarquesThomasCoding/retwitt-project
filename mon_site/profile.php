@@ -3,8 +3,15 @@
 // Continuité de la session
 session_start();
 
+// Si l'utilisateur n'est pas connecté, on le redirige vers la page d'accueil
 if(!isset($_SESSION["user_id"])){
     header("Location: index.php");
+    exit();
+}
+
+// Si l'utilisateur n'a pas renseigné d'identifiant dans la barre de recherche, on le redirige vers sa propre page profil
+if(!isset($_GET['id_user'])){
+    header("Location: profile.php?id_user=".$_SESSION['user_id']);
     exit();
 }
 
@@ -53,6 +60,31 @@ $twitts = $requestTwitt->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Récupération du template "navbars.php" -->
     <?php require "templates/navbars.php"; ?>
+
+
+    <!-- Pop-up pour confirmer la suppression d'un post -->
+    <div class="confirm-delete">
+        <div class="confirm-delete-content">
+            <h2>Delete post?</h2>
+            <div>This action cannot be undo</div>
+            <form class="confirm-delete-content-buttons">
+                <button class="confirm-delete-content-buttons-close">Close</button>
+                <button class="confirm-delete-content-buttons" type="submit" placeholder="Confirm">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Fenêtre de confirmation d'action (suppression ou enregistrement d'un post) -->
+    <div class="confirm-action">
+        <div class="confirm-action-content">
+            <div class="action-post-modal-content"></div>
+            <div class="action-post-modal-bar">
+                <div class="action-post-modal-bar-progress"></div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Carte de profil de l'utilisateur -->
     <div class="profile-card-user">
@@ -125,6 +157,6 @@ $twitts = $requestTwitt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     <!-- On récupère le script JS -->
-    <script src="profile.js"></script>
+    <script src="js/profile.js"></script>
 </body>
 </html>

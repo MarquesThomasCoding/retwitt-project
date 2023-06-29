@@ -13,6 +13,7 @@ div.new-post-modal {
     z-index: 3;
 }
 
+/* On anime le survol */
 div.new-post-modal:hover {
     animation: scale-up 0.5s both linear;
 }
@@ -29,7 +30,7 @@ a.new-post-modal:hover {
     animation: scale-up 1s linear both;
 }
 
-/* Animation lors du passage de la souris sur le bouton */
+/* Animation lors du passage de la souris sur le modal */
 @keyframes scale-up {
     0% {
         transform: scale(1);
@@ -65,17 +66,13 @@ a.new-post-modal:hover {
     border-top-left-radius: 5px;
 }
 
-h4.pseudo {
-    margin: auto;
-    margin-left: 10px;
-}
-
 form.new-post-modal {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Sélection des tags */
 select {
     margin-top: 10px;
     padding: 2px;
@@ -91,6 +88,7 @@ option {
     border-radius: 5px;
 }
 
+/* Zone d'écriture */
 textarea {
     color: var(--main-text-color);
     font-size: 20px;
@@ -104,7 +102,7 @@ textarea {
     outline: none;
 }
 
-
+/* Ajout d'un média */
 .medias {
     display: flex;
 }
@@ -122,7 +120,7 @@ textarea {
 
 .media-input + label {
     text-align: center;
-    height: 20%;
+    height: 60px;
     font-size: 1.25em;
     font-weight: 700;
     color: white;
@@ -139,6 +137,7 @@ textarea {
     background-color: var(--main-card-color);
 }
 
+/* Preview du média */
 #preview * {
     display: flex;
     width: 50px;
@@ -159,6 +158,7 @@ textarea {
 /* Responsive */
 @media (max-width: 1010px) {
     .new-post-modal-content {
+        top: 10%;
         width: 75%;
         right: 12.5%;
     }
