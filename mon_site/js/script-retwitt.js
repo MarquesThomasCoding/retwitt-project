@@ -285,6 +285,7 @@ const newPostContent = document.querySelector(".new-post-modal-content")
 const posts = document.querySelector(".posts")
 const profile = document.querySelector(".profile-card")
 const twittContent = newPostContent.querySelector("#twitt-content")
+const twittTag = newPostContent.querySelector("#twitt-tag")
 
 // On vérifie si l'utilisateur avait déjà commencé à écrire quelque chose
 // Si oui, on affiche ce qu'il avait écrit
@@ -294,6 +295,13 @@ if(localStorage.getItem('twitt-content') == null) {
 }
 else {
     twittContent.value = localStorage.getItem('twitt-content')
+}
+
+if(localStorage.getItem('twitt-tag') == null) {
+    twittTag.value = tags[0]
+}
+else {
+    twittTag.value = localStorage.getItem('twitt-tag')
 }
 
 // On floute les éléments situés sous le pop-up du nouveau post, on empêche le scroll et on affiche le pop-up
@@ -312,6 +320,7 @@ newPost.addEventListener('click', reaction => {
     }
     // Sauvegarde du texte écrit par l'utilisateur lors de la fermeture du pop-up sans publication du post
     localStorage.setItem('twitt-content', twittContent.value)
+    localStorage.setItem('twitt-tag', twittTag.value)
 })
 
 // On affiche un aperçu du média sélectionné par l'utilisateur pour le nouveau post
