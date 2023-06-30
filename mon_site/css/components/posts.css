@@ -10,6 +10,7 @@
 .filters {
     display: flex;
     justify-content: left;
+    align-items: center;
 }
 
 .filters div.filter {
