@@ -63,6 +63,7 @@ $searchTwitts = $requete->fetchAll(PDO::FETCH_ASSOC);
             <div class="tags-filter filter">
                 <div class="tags-menu">Tags <i class="fa-solid fa-chevron-down"></i></div>
             </div>
+            <span class="tag-preview"></span>
         </div>
         <!-- Menu de sélection des tags -->
         <div class="tags-content">
