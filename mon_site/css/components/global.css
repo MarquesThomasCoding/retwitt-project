@@ -3,8 +3,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
 
+:root {
     /* Variables CSS */
+
     --main-color-bg: rgb(11, 47, 66);
     --secondary-color-bg: #104460;
     --main-card-color: #0e4562;
@@ -14,8 +17,8 @@
     --main-btn-color-before: #04121a;
     --main-btn-color-after: #0b8cd6;
     --main-shadow: 5px 5px 0px 5px #082636;
+    --tag-preview-color: rgb(199, 197, 197);
 }
-
 
 /* Section error de la page redirection */
 .error {
