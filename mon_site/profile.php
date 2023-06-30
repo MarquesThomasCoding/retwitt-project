@@ -9,6 +9,7 @@ if(!isset($_SESSION["user_id"])){
     exit();
 }
 
+// On utilise l'identifiant de l'utilisateur pour afficher sa page profil, car c'est la seule information, avec l'adresse mail, qui est unique à chaque utilisateur
 // Si l'utilisateur n'a pas renseigné d'identifiant dans la barre de recherche, on le redirige vers sa propre page profil
 if(!isset($_GET['id_user'])){
     header("Location: profile.php?id_user=".$_SESSION['user_id']);
