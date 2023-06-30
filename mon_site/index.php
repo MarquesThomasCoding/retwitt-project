@@ -167,7 +167,7 @@ $allTwitts = $requete->fetchAll(PDO::FETCH_ASSOC);
         <form class="new-post-modal" action="database_interactions/add_post.php" method="post" enctype="multipart/form-data">
 
         <!-- Sélection du tag du post -->
-            <select name="tags-select">
+            <select id="twitt-tag" name="tags-select">
                 <option class="voyage">voyage</option>
                 <option class="jeu-video">jeu-video</option>
                 <option class="innovation">innovation</option>
