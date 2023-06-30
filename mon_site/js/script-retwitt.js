@@ -86,22 +86,6 @@ checkSession()
     }
 })
 
-
-// Style appliqué sur les options situées au bas des posts lors du survol avec la souris :
-
-const options = document.querySelectorAll(".options")
-
-options.forEach(option => {
-    option.addEventListener("mouseover", reaction => {
-        // Souris sur l'option -> l'icone apparait bleue
-        option.style.color = "#71cdff"
-    })
-    option.addEventListener("mouseout", reaction => {
-        // Souris sortie -> l'icone apparait blanche
-        option.style.color = "white"
-    })
-})
-
 // Pop-up de confirmation de suppression du post
 
 const DeletePostModal = document.querySelector(".confirm-delete")
@@ -217,21 +201,23 @@ tagsMenu.addEventListener("click", reaction => {
 })
 
 const tagChoice = document.querySelectorAll(".tag-choice")
-// Tableau des tags
-const tags = [
-    "voyage",
-    "jeu-video",
-    "innovation",
-    "musique",
-    "television",
-    "animaux",
-    "peinture",
-    "lecture",
-    "sport",
-    "loisirs"
-]
+
+// Tableau des tags avec leur couleur associée
+const tags = {
+    "voyage" : "rgb(16, 134, 164)",
+    "jeu-video" : "rgb(16, 101, 164)",
+    "innovation" : "rgb(16, 56, 164)",
+    "musique" : "rgb(87, 16, 164)",
+    "television" : "rgb(164, 16, 162)",
+    "animaux" : "rgb(164, 16, 56)",
+    "peinture" : "rgb(164, 58, 16)",
+    "lecture" : "rgb(164, 125, 16)",
+    "sport" : "rgb(132, 164, 16)",
+    "loisirs" : "rgb(60, 164, 16)"
+}
 
 const post = document.querySelectorAll(".post")
+const root = document.querySelector(":root")
 
 // Pour chaque post, on ajoute un écouteur de clic
 tagChoice.forEach(tag => {
@@ -244,12 +230,21 @@ tagChoice.forEach(tag => {
             }
         })
 
-        // On affiche uniquement les posts possedant le tag sélectionné
-        tags.forEach(tagged => {
+        // On parcourt le tableau des tags pour afficher les posts correspondants au tag cliqué et changer la couleur du tag-preview et des icones lors de leur survol
+
+        for(const tagged in tags) {
+            // Si le tag cliqué est "all", on affiche tous les posts
             if(tag.classList.contains("all")) {
+                // On affiche tous les posts
                 post.forEach(p => { p.classList.remove("hidden") })
+                // On met la couleur du tag-preview à sa valeur par défaut
+                root.style.setProperty('--tag-preview-color', 'rgb(199, 197, 197)');
             }
+            // Sinon, on affiche les posts correspondants au tag cliqué
             else if(tagged == tag.classList[1]) {
+                // On met la couleur du tag-preview à la couleur du tag cliqué
+                root.style.setProperty('--tag-preview-color', tags[tagged]);
+                // On affiche les posts correspondants au tag cliqué
                 post.forEach(p => {
                     if(!p.classList.contains(tagged)) {
                         p.classList.add("hidden")
@@ -259,7 +254,7 @@ tagChoice.forEach(tag => {
                     }
                 })
             }
-        })
+        }
     })
 })
 
