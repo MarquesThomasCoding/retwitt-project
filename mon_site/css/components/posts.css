@@ -28,6 +28,23 @@
     cursor: pointer;
 }
 
+.tag-choice {
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+.tag-choice:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.tag-preview {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: var(--tag-preview-color);
+}
+
 .tags-content {
     text-align: center;
     position: absolute;
@@ -53,55 +70,36 @@
 /* Liste des tags */
 .voyage {
     background-color: rgb(16, 134, 164);
-    border-radius: 10px;
 }
 .jeu-video {
     background-color: rgb(16, 101, 164);
-    border-radius: 10px;
 }
 .innovation {
     background-color: rgb(16, 56, 164);
-    border-radius: 10px;
 }
 .musique {
     background-color: rgb(87, 16, 164);
-    border-radius: 10px;
 }
 .television {
     background-color: rgb(164, 16, 162);
-    border-radius: 10px;
 }
 .animaux {
     background-color: rgb(164, 16, 56);
-    border-radius: 10px;
 }
 .peinture {
     background-color: rgb(164, 58, 16);
-    border-radius: 10px;
 }
 .lecture {
     background-color: rgb(164, 125, 16);
-    border-radius: 10px;
 }
 .sport {
     background-color: rgb(132, 164, 16);
-    border-radius: 10px;
 }
 .loisirs {
     background-color: rgb(60, 164, 16);
-    border-radius: 10px;
 }
 
 /*  */
-
-.tag-choice {
-    opacity: 0.5;
-}
-
-.tag-choice:hover {
-    cursor: pointer;
-    opacity: 1;
-}
 
 .tag-active {
     opacity: 1;
@@ -187,6 +185,11 @@ img.twitt_user_img {
 i.options {
     font-size: 20px;
     color: var(--main-text-color);
+}
+
+i.options:hover {
+    cursor: pointer;
+    color: var(--tag-preview-color);
 }
 
 .del-icon, .saved-icon {
