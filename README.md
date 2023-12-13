@@ -8,6 +8,8 @@ Projet final Axe Coding & Digital Innovation - Réseau social type Twitter
 * HTML
 * CSS
 * JavaScript
+* PHP
+* SQL
 
 ### Statut :
 ✔️ Terminé
