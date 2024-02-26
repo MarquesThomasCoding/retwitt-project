@@ -5,11 +5,7 @@ Projet étudiant
 Projet final Axe Coding & Digital Innovation - Réseau social type Twitter
 
 ### Technologies :
-* HTML
-* CSS
-* JavaScript
-* PHP
-* SQL
+![](https://skillicons.dev/icons?i=html,css,js,php,mysql)
 
 ### Statut :
 ✔️ Terminé
